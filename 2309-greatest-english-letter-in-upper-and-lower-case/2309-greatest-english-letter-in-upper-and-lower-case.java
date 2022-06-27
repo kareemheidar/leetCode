@@ -2,9 +2,7 @@ class Solution {
     public String greatestLetter(String s) {
         String ss = "";
         for (int i = 0; i < s.length(); i++) {
-            char c1 = (char) (s.charAt(i)+32);
-            char c2 = (char) (s.charAt(i)-32);
-            if ( s.contains(c1 + "" ) ||  s.contains(c2 + "" )){
+            if ( s.contains(((char) (s.charAt(i)+32)) + "" ) ||  s.contains(((char) (s.charAt(i)-32)) + "" )){
                 ss += s.charAt(i);
             }
         }
@@ -15,7 +13,7 @@ class Solution {
             String r = ss.substring(0,1);
             for (int i = 0; i < ss.length(); i++) {
                 if (ss.charAt(i) > r.charAt(0))
-                    r = ss.charAt(i)+"";
+                    r = ss.substring(i,i+1);
             }
             return r;
         }
